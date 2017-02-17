@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group = 'com.qapil.gradle'
+
+repositories {
+	mavenLocal()
+	jcenter()
+}
+
+dependencies {
+	compile gradleApi()
+	compile localGroovy()
+	compile 'org.apache.derby:derbynet:10.10.2.0'
+	compile 'org.apache.derby:derbyclient:10.10.2.0'
+	// compile 'org.apache.derby:derbyrun:10.10.2.0'
+}
+
+uploadArchives {
+	repositories {
+		ivy {
+			url = "file://$buildDir/repo"
+		}
+	}
+}
