@@ -1,0 +1,17 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'com.qapil.gradle:derby-gradle-plugin:0.1.0'
+	}
+}
+
+repositories {
+	jcenter()
+}
+
+if (!project.plugins.findPlugin(com.qapil.gradle.plugins.derby.DerbyPlugin)) {
+	project.apply(plugin: com.qapil.gradle.plugins.derby.DerbyPlugin)
+}
